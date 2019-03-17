@@ -108,14 +108,20 @@ services:
 # Volumes to persist data
 volumes:
   postgres_volume:
-    driver: host
+    driver: local
     driver_opts:
-        source: /mnt/nfs-1/postgres
+        type: 'none'
+        o: 'bind'
+        device: '/mnt/nfs-1/postgres' 
   minio_volume:
-    driver: host
+    driver: local
     driver_opts:
-        source: /mnt/nfs-1/minio  
+        type: 'none'
+        o: 'bind'
+        device: '/mnt/nfs-1/minio'
   portainer_volume:
-    driver: host
+    driver: local
     driver_opts:
-        source: /mnt/nfs-1/portainer2
+        type: 'none'
+        o: 'bind'
+        device: '/mnt/nfs-1/portainer2'
