@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 # All available services
 services:
@@ -108,5 +108,14 @@ services:
 # Volumes to persist data
 volumes:
   postgres_volume:
+    driver: host
+    driver_opts:
+        source: /mnt/nfs-1/postgres
   minio_volume:
+    driver: host
+    driver_opts:
+        source: /mnt/nfs-1/minio  
   portainer_volume:
+    driver: host
+    driver_opts:
+        source: /mnt/nfs-1/portainer2
